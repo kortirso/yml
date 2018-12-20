@@ -15,6 +15,16 @@ def deps do
 end
 ```
 
+## Using
+
+### Read YML file
+
+Read from YML/YAML file
+
+```elixir
+  Yml.read_from_file("/path_to_file")
+```
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/kortirso/yml.

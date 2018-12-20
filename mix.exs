@@ -27,7 +27,8 @@ defmodule Yml.MixProject do
 
   defp deps do
     [
-      {:ex_doc, "~> 0.19", only: :dev}
+      {:ex_doc, "~> 0.19", only: :dev},
+      {:yaml_elixir, "~> 2.1.0"}
     ]
   end
 

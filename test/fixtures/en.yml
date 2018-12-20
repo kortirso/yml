@@ -1,0 +1,7 @@
+en-US:
+  welcome:
+    index:
+      first: Hello
+      last: Buy
+  buttons:
+    click: Click me!
