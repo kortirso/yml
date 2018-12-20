@@ -1,7 +1,11 @@
 en-US:
   welcome:
-    index:
+    index1:
       first: Hello
       last: Buy
+      great: Oh
+    index2:
+      first: Hola
+  donut: Great
   buttons:
     click: Click me!

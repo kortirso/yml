@@ -20,4 +20,17 @@ defmodule YmlTest do
       assert {:ok, %{}} = Yml.read_from_file(path_to_file)
     end
   end
+
+  test "write file" do
+    path_to_read_file = File.cwd! |> Path.join("test/fixtures/en.yml")
+    path_to_write_file = File.cwd! |> Path.join("test/fixtures/result.yml")
+
+    assert {:ok, yml} = Yml.read_from_file(path_to_read_file)
+
+    # success saving to file
+    assert {:ok, "File is saved"} = Yml.write_to_file(path_to_write_file, yml)
+
+    # success reading from previous saved file
+    assert {:ok, _} = Yml.read_from_file(path_to_write_file)
+  end
 end

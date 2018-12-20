@@ -17,12 +17,20 @@ end
 
 ## Using
 
-### Read YML file
+### Read from YML file
 
 Read from YML/YAML file
 
 ```elixir
   Yml.read_from_file("/path_to_file")
+```
+
+### Write to YML file
+
+Read from YML/YAML file
+
+```elixir
+  Yml.write_to_file("/path_to_file", content)
 ```
 
 ## Contributing
