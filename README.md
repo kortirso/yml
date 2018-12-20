@@ -10,7 +10,7 @@ by adding `yml` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:yml, "~> 0.0.1"}
+    {:yml, "~> 0.9.0"}
   ]
 end
 ```

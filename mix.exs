@@ -8,7 +8,7 @@ defmodule Yml.MixProject do
   def project do
     [
       app: :yml,
-      version: "0.0.1",
+      version: "0.9.0",
       elixir: "~> 1.7",
       name: "Yml",
       description: @description,
