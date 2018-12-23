@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Modified
 - move all map transforming to Yml.write_to_string
+- transform value when is_list
 
 ## [0.9.0] - 2018-12-20
 ### Added

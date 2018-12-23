@@ -1,0 +1,20 @@
+en:
+  date:
+    formats:
+      default: "%m/%d/%Y"
+      short: "%e %b"
+      long: "%B %e, %Y"
+      long_ordinal: "%B %e, %Y"
+      only_day: "%e"
+      order:
+        - :month
+        - :day
+        - :year
+    day_names: [sunday, monday, tuesday, wednesday, thursday, friday, saturday]
+    abbr_day_names: [sun, mon, tue, wed, thurs, fri, sat]
+    month_names: [~, January, February, March, April, May, June, July, August, September, October, November, December]
+    abbr_month_names: [~, jan., feb., mar., apr., may, june, july., aug, sept., oct., nov., dec.]
+    order:
+      - :month
+      - :day
+      - :year

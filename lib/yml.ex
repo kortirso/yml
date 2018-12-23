@@ -63,13 +63,26 @@ defmodule Yml do
     |> do_write_to_string(value, layer_index + 1)
   end
 
+  defp make_string(acc, layer_index, key, value) when is_list(value), do: attach_list(acc, layer_index, key, value)
   defp make_string(acc, layer_index, key, value), do: attach_content(acc, layer_index, key, value)
 
   defp attach_content(acc, layer_index, key), do: acc <> "#{add_head_spaces(layer_index, 0, "")}#{key}:\n"
   defp attach_content(acc, layer_index, key, value), do: acc <> "#{add_head_spaces(layer_index, 0, "")}#{key}: #{value}\n"
 
+  defp attach_list(acc, layer_index, key, value) do
+    value =
+      value
+      |> replace_nils()
+      |> Enum.join(", ")
+    acc <> "#{add_head_spaces(layer_index, 0, "")}#{key}: [#{value}]\n"
+  end
+
   defp add_head_spaces(layer_index, index, acc) when layer_index > index, do: add_head_spaces(layer_index, index + 1, acc <> "  ")
   defp add_head_spaces(_, _, acc), do: acc
+
+  defp replace_nils(list) do
+    Enum.map(list, fn x -> if (is_binary(x) || is_integer(x)), do: x, else: "~" end)
+  end
 
   @doc """
   Write map to YML file
