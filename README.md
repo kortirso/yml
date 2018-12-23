@@ -25,6 +25,14 @@ Read from YML/YAML file
   Yml.read_from_file("/path_to_file")
 ```
 
+### Write to string
+
+Read from YML/YAML file
+
+```elixir
+  Yml.write_to_string(content)
+```
+
 ### Write to YML file
 
 Read from YML/YAML file

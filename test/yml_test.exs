@@ -1,7 +1,7 @@
 defmodule YmlTest do
   use ExUnit.Case
 
-  describe "read file" do
+  describe "read from file" do
     test "returns error for unexisted file" do
       path_to_file = File.cwd! |> Path.join("test/fixtures/something.yml")
 
@@ -21,7 +21,18 @@ defmodule YmlTest do
     end
   end
 
-  test "write file" do
+  test "write to string" do
+    path_to_read_file = File.cwd! |> Path.join("test/fixtures/en.yml")
+
+    assert {:ok, yml} = Yml.read_from_file(path_to_read_file)
+
+    # success saving to file
+    assert {:ok, result} = Yml.write_to_string(yml)
+
+    assert is_binary(result) == true
+  end
+
+  test "write to file" do
     path_to_read_file = File.cwd! |> Path.join("test/fixtures/en.yml")
     path_to_write_file = File.cwd! |> Path.join("test/fixtures/result.yml")
 
